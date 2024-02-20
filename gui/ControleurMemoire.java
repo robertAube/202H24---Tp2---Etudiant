@@ -3,6 +3,7 @@ package gui;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -64,22 +65,36 @@ public class ControleurMemoire implements ActionListener, Runnable {
         JButton b = (JButton) e.getSource();
 
         verifierBouton(b);
+        System.out.println("d");
     }
 
     private void ajouterEcouteur() {
         String image = "";
+        String imageFileName;
 
         for (int ligne = 0; ligne < JeuMemoire.LIGNE; ligne++) {
             for (int colonne = 0; colonne < JeuMemoire.COLONNE; colonne++) {
-                image = jeu.getNomForme(ligne, colonne);
+                ImageIcon imageIcon;
 
-                ImageIcon imageIcon = new ImageIcon(IMAGE_PATH + PATH_SEPARATOR + image + ".png");
+                image = jeu.getNomForme(ligne, colonne);
+                imageFileName = IMAGE_PATH + PATH_SEPARATOR + image + ".png";
+                if (existeEtEstUnFichier(imageFileName)) {
+                    imageIcon = new ImageIcon(imageFileName);
+                }
+                else {
+                    throw new RuntimeException("Le fichier image \"" + imageFileName + "\" est introuvable.");
+                }
                 //		imageIcon = resize(imageIcon, 64,64);
                 vue.boutons[ligne][colonne].addActionListener(this);
                 vue.boutons[ligne][colonne].setIcon(imageIcon);
                 vue.boutons[ligne][colonne].setOpaque(true); //Pour Mac
             }
         }
+    }
+
+    private static boolean existeEtEstUnFichier(String fileName) {
+        File f = new File(fileName);
+        return f.exists() && !f.isDirectory();
     }
 
     private ImageIcon resize(ImageIcon imageIcon, int largeur, int hauteur) {
