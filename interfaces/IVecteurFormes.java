@@ -15,9 +15,9 @@ public interface IVecteurFormes {
 
     /**
      * Mettre le nombre de formes voulues dans le vecteur. Les formes qui seront
-     * placées dans le vecteur devront être générées de la façon suivante:
+     * placées dans le vecteur devront être générées de la façon suivante :
      * <p>
-     * Tant que le nombre de formes souhaitées n'est pas atteint on crée une forme
+     * Tant que le nombre de formes souhaitées n'est pas atteint, on crée une forme
      * à la fois, pour toutes les formes disponibles (Cercle, Rectangle et
      * Triangle) combiné à toutes les couleurs possibles (rouge, vert, bleu,
      * jaune, noir, orange). Quand toutes les combinaisons sont épuisées on

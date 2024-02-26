@@ -16,7 +16,7 @@ public interface IJeuMemoire {
      * L'intelligence du jeu. Génère un tableau de coordonnées (des objets <b>Point(colonne, ligne)</b>)
      * au hasard. Les points générés doivent être valides dans la grille de jeu.
      * Le nombre de points générés est en relation avec le niveau courant du jeu.
-     * Il obéit à la règle suivante:
+     * Il obéit à la règle suivante :
      * <p>
      * Le nombre de points générés = niveau courant du jeu + 2
      *
@@ -58,7 +58,7 @@ public interface IJeuMemoire {
     public int getNiveau();
 
     /**
-     * Ajoute 1 au niveau si celui-ci est en-dessous de 6, autrement il demeure à 6.
+     * Ajoute 1 au niveau si celui-ci est en-dessous de 6, autrement, il demeure à 6.
      */
     public void setNiveauPlusUn();
 
