@@ -10,8 +10,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import jeu.JeuMemoire;
-
 /**
  * Contrôleur pour le jeu de mémoire
  *
@@ -32,13 +30,12 @@ public class ControleurMemoire implements ActionListener, Runnable {
     private VueMemoire vue;
     private Thread t1;
 
-    // TODO - Ajouter une variable pour une instance de type "JeuMemoire" du nom de "jeu".
+    // TODO - Ajouter un attribut pour une instance de type "JeuMemoire" du nom de "jeu".
     //  Voir le diagramme de classe.
-    private JeuMemoire jeu;
 
     public ControleurMemoire() {
         // TODO - Instancier la variable "jeu"
-        jeu = new JeuMemoire();
+
         vue = new VueMemoire();
 
         ajouterEcouteur();
