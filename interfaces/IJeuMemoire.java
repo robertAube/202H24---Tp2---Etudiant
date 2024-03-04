@@ -58,7 +58,7 @@ public interface IJeuMemoire {
     public int getNiveau();
 
     /**
-     * Ajoute 1 au niveau si celui-ci est en-dessous de 6, autrement, il demeure à 6.
+     * Ajoute 1 au niveau si celui-ci est en-dessous de NIVEAU_MAX, autrement, il demeure à NIVEAU_MAX.
      */
     public void setNiveauPlusUn();
 

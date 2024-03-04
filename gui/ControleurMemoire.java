@@ -105,7 +105,7 @@ public class ControleurMemoire implements ActionListener, Runnable {
         int colonne;
         ETAT_JEU jeu = ETAT_JEU.PAS_FINI;
 
-        // Le niveau 1 en cache 3, niveau 2 en cache 4, etc. jusqu'à 7 qui en cache 9
+        // Le niveau 1 en cache 3, niveau 2 en cache 4, etc. jusqu'à NIVEAU_MAX qui en cache NIVEAU_MAX + 2
         // le joueur peut jouer jusqu'à ce qu'il ait réussi ou jusqu'à la première erreur
         if (jeu == ETAT_JEU.PAS_FINI && nbEssai <= this.jeu.getNiveau() + 2) {
             System.out.println(b.getName());
